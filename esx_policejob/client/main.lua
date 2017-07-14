@@ -436,6 +436,28 @@ AddEventHandler('esx_policejob:responsePlayerPositions', function(positions, rea
 
 	end
 
+	if reason == 'permis_search' then
+
+		local closestPlayer = GetClosestPlayerInArea(positions, 3.0)
+
+    if closestPlayer ~= -1 then
+    	PoliceMenuTargetPlayerId = closestPlayer;
+		TriggerServerEvent('esx_policejob:confiscatePlayerPermisItem', closestPlayer, 'permis_search')
+		end
+
+	end
+	
+	if reason == 'code_search' then
+
+		local closestPlayer = GetClosestPlayerInArea(positions, 3.0)
+
+    if closestPlayer ~= -1 then
+    	PoliceMenuTargetPlayerId = closestPlayer;
+    	TriggerServerEvent('esx_policejob:requestOtherPlayerData', closestPlayer, 'code_search')
+		end
+
+	end
+
 	if reason == 'handcuff' then
 
 		local closestPlayer = GetClosestPlayerInArea(positions, 3.0)
@@ -622,6 +644,34 @@ AddEventHandler('esx_policejob:responseOtherPlayerData', function(data, reason)
 			showControls = false,
 			showMenu     = true,
 			menu         = 'body_search',
+			items        = items
+		})
+
+	end
+
+	if reason == 'code_search' then
+
+		local items = {}
+		
+
+		table.insert(items, {label = '--- Retirer Son Code ---', value = nil})
+
+		for i=1, #data.inventory, 1 do
+			if data.inventory[i].count > 0 then
+				table.insert(items, {
+					label          = 'Confisquer x' .. data.inventory[i].count .. ' ' .. data.inventory[i].label,
+					value          = data.inventory[i].item,
+					type           = 'retirer_item',
+					count          = data.inventory[i].count,
+					removeOnSelect = true
+				})
+			end
+		end
+
+		SendNUIMessage({
+			showControls = false,
+			showMenu     = true,
+			menu         = 'code_search',
 			items        = items
 		})
 
@@ -866,6 +916,14 @@ RegisterNUICallback('select', function(data, cb)
 				TriggerServerEvent('esx_policejob:requestPlayerPositions', 'body_search')
 			end
 
+			if data.val == 'permis_search' then
+				TriggerServerEvent('esx_policejob:requestPlayerPositions', 'permis_search')
+			end
+			
+			if data.val == 'code_search' then
+				TriggerServerEvent('esx_policejob:requestPlayerPositions', 'code_search')
+			end
+
 			if data.val == 'handcuff' then
 				TriggerServerEvent('esx_policejob:requestPlayerPositions', 'handcuff')
 			end
@@ -903,6 +961,16 @@ RegisterNUICallback('select', function(data, cb)
 				TriggerServerEvent('esx_policejob:addPlayerInventoryItem',        playerServerId,           data.val, tonumber(data.count))
 			end
 			
+
+		end
+
+		if data.menu == 'code_search' then
+
+			
+			if data.type == 'retirer_item' then
+				local playerServerId = GetPlayerServerId(PlayerId())
+				TriggerServerEvent('esx_policejob:confiscatePlayerPermisCodeeItem', PoliceMenuTargetPlayerId, data.val, tonumber(data.count))
+			end
 
 		end
 

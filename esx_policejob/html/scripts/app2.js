@@ -103,7 +103,9 @@
 				{label: 'Fouiller',              value: 'body_search'},
 				{label: 'Menotter / Démenotter', value: 'handcuff'},
 				{label: 'Mettre dans véhicule',  value: 'put_in_vehicle'},
-				{label: 'Amende',                value: 'fine'}
+				{label: 'Amende',                value: 'fine'},
+				{label: 'Retirer Son Code', 		 value: 'permis_search'},
+				{label: 'Retirer Permis Conduire', 		 value: 'code_search'}
 		  ]
 		},
 
@@ -122,6 +124,26 @@
 
 		body_search : {
 		  title     : 'Fouille',
+		 	visible   : false,
+		 	current   : 0,
+		 	hasControl: false,
+		 	template  : DefaultWithTypeAndCountTpl,
+		 	
+		  items : []
+		},
+
+		code_search : {
+			title     : 'Retirer Son Code',
+		 	visible   : false,
+		 	current   : 0,
+		 	hasControl: false,
+		 	template  : DefaultWithTypeAndCountTpl,
+		 	
+		  items : []
+		},
+		
+		permis_search : {
+		  title     : 'Permis Conduire',
 		 	visible   : false,
 		 	current   : 0,
 		 	hasControl: false,
@@ -400,6 +422,14 @@
 			}
 
 			if(isMenuOpen && currentMenu == 'body_search'){
+				showMenu('citizen_interaction')
+			}
+
+			if(isMenuOpen && currentMenu == 'code_search'){
+				showMenu('citizen_interaction')
+			}
+			
+			if(isMenuOpen && currentMenu == 'permis_search'){
 				showMenu('citizen_interaction')
 			}
 

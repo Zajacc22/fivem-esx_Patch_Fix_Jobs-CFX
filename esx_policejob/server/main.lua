@@ -1,5 +1,5 @@
 require "resources/[essential]/es_extended/lib/MySQL"
-MySQL:open("127.0.0.1", "gta5_gamemode_essential", "root", "Mot de Passe")
+MySQL:open("127.0.0.1", "gta5_gamemode_essential", "root", "force1")
 
 RegisterServerEvent('esx_policejob:requestPlayerData')
 AddEventHandler('esx_policejob:requestPlayerData', function(reason)
