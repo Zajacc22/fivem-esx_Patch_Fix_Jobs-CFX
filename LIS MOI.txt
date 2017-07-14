@@ -1,0 +1,16 @@
+--[[
+#####################################################################################################
+HEY, CECI UN EST PACK DE JOBS UPDATE + PATCH FIX DES REQUETE
+Mods Update by Super.Cool.Ninja 
+#####################################################################################################
+--]]
+- 1 Seul requete executer
+- Se pack Permet d'envoyée le moins possible de requete pour chercher votre tenue via votre base de donnée
+- La seul requete qui part est celle pour chercher votre tenue a vous de base (ex:)
+Si vous prenez votre tenue ex mineur elle ne chargera pas des requete mais si vous prenez votre tenue de base elle chargera 1 Requete
+
+- Menu Policier Update, Maintenant vous avez la possibilitée de choisir votre tenue correspondant a votre grade via le menu
+- Couleur du Menu Policier Update
+- Fix de pole emploie: Plus besoin de deco reco pour prendre votre tenue ^^
+
+

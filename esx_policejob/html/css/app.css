@@ -1,0 +1,91 @@
+@font-face {
+	font-family: bankgothic;
+	src: url('../bankgothic.ttf');
+}
+
+@font-face {
+	font-family: pcdown;
+	src: url('../pdown.ttf');
+}
+
+
+body {
+	background: transparent url('../img/bg-test.png') no-repeat 50%;
+	background-size: cover;
+	overflow: hidden;
+}
+
+#controls {
+	font-family   : pcdown;
+	font-size     : 3em;
+	color         : #FFF;
+	margin-left   : auto;
+    margin-right  : auto;
+    width         : 30%;
+	top           : 30%;
+	right         : 50%;
+    
+    text-align    : center;
+	vertical-align: middle;
+    
+	text-shadow:
+        -2px -2px 0 #000,
+		 2px -2px 0 #000,
+		-2px  2px 0 #000,
+		 2px  2px 0 #000
+	;
+}
+
+.controls {
+	display: none;
+}
+
+.menu {
+	font-family     : bankgothic;  
+    background-color: rgba(0, 0, 0, 0.8);
+    color           : #fff;
+    position        : absolute;
+    right            : 0;
+    top             : 0; 
+	bottom: 0;
+	width: 25%;
+	display: none;
+	cursor: default;
+}
+
+.menu .head {
+	text-align  : left;
+	height      : 100px;
+	line-height : 100px;
+	padding-left: 20px;
+	background-color: #444C96;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.menu .head .ico {
+	display: inline-block;
+	font-size: 40px;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
+.menu .menu-items {
+	position: relative;
+	height: calc(100% - 100px);
+	overflow: auto;
+	width: calc(100% + 20px);
+}
+
+.menu .menu-items .menu-item {
+	display         : block;
+	background-color: transparent;
+	height          : 48px;
+	line-height     : 48px;
+	color           : white;
+	text-align      :  left;
+	padding-left: 20px;
+}
+
+.menu .menu-items .menu-item.selected, .menu .menu-items .menu-item:hover {
+	background-color: #B32C34;
+}

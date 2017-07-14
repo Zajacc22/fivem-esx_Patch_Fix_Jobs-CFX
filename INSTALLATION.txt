@@ -1,0 +1,11 @@
+--[[
+#####################################################################################################
+Hey, voici le tuto pour installer le Pack
+Update crée by Super.Cool.Ninja
+#####################################################################################################
+--]]
+
+- Glissez 1 par 1 les dossier des jobs dans votre fichier [ESX]
+- Configurer vos Mot de passe coter serveur
+- Ajoutée les noms des dossier dans votre Citmp Ex esx_policejob etc ...
+- Enjoy Bon Jeux a vous ^^
