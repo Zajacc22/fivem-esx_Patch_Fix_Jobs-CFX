@@ -9,3 +9,6 @@ Update crée by Super.Cool.Ninja
 - Configurer vos Mot de passe coter serveur
 - Ajoutée les noms des dossier dans votre Citmp Ex esx_policejob etc ...
 - Enjoy Bon Jeux a vous ^^
+
+- AVANT DE LANCER VOTRE SERVEUR VEUILLEZ SUPPRIMER TOUS CE QUI SE TROUVE DANS SKIN_MALE PUIS SKIN_FEMALE
+EXEMPLE COMME SUR L'IMAGE: https://prnt.sc/fvgt3r

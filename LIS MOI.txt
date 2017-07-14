@@ -13,4 +13,7 @@ Si vous prenez votre tenue ex mineur elle ne chargera pas des requete mais si vo
 - Couleur du Menu Policier Update
 - Fix de pole emploie: Plus besoin de deco reco pour prendre votre tenue ^^
 
+- AVANT DE LANCER VOTRE SERVEUR VEUILLEZ SUPPRIMER TOUS CE QUI SE TROUVE DANS SKIN_MALE PUIS SKIN_FEMALE
+EXEMPLE COMME SUR L'IMAGE: https://prnt.sc/fvgt3r
+
 
